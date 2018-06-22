@@ -10,11 +10,13 @@ import { GrupoService } from '../grupo/grupo.service';
   styleUrls: ['./selecao.component.css']
 })
 export class SelecaoComponent implements OnInit {
+
   newSelecao: Selecao;
+
   selecoes: Selecao[];
+
   grupos : Grupo[];
 
-  showMessageError: boolean;
   showMessageError1: boolean;
   showMessageError2: boolean;
 
@@ -24,7 +26,6 @@ export class SelecaoComponent implements OnInit {
 
   ngOnInit() {
     this.newSelecao = new Selecao();
-    this.showMessageError = false;
     this.loadGrupos();
     this.loadSelecoes();
   }
@@ -39,8 +40,6 @@ export class SelecaoComponent implements OnInit {
     this.grupoService.getGrupos().subscribe(
       grupos => this.grupos = grupos
     );
-
-    console.log(this.grupos)
   }
 
   saveSelecao() {
@@ -64,7 +63,7 @@ export class SelecaoComponent implements OnInit {
       this.showMessageError1 = true;
     }
 
-    if (!this.newSelecao.grupo || this.newSelecao.grupo.name.trim() == '') {
+    if (!this.newSelecao.grupo) {
       this.showMessageError2 = true;
     }
 

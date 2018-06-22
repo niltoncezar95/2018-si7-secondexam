@@ -1,27 +1,44 @@
-h1 {
-    text-align: center;
-    font-size: 50px;
-    color: #808070;
-}
-
-nav {
-    width: 240px;
-    margin: 0 auto;
-}
-
-a {
-    width: 150px;
-    height: 20px;
+fieldset {
     padding: 10px;
-    text-align: center;
-    margin-right: 5px;
-    border: 1px solid black;
-    border-radius: 30px;
-    background-color: #3498DB;
-    text-decoration: none;
 }
 
-a:hover, a:active, a:visited {
-    color: white;
-    font-size: 16px;
+fieldset input[type="text"],
+fieldset input[type="number"],
+fieldset input[type="email"],
+fieldset select {
+    margin: 5px;
+    min-width: 250px;
+}
+
+span.error {
+    color: red;
+    font-weight: bold;
+}
+
+
+ul {
+    padding: 0;
+}
+
+li {
+    float: left;
+    width: 200px;
+    height: 120px;
+    border: 1px solid black;
+    margin-right: 18px;
+    list-style-type: none;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #3498DB;
+    word-wrap: break-word;
+}
+
+li input {
+    width: 90%;
+    margin-top: 10px;
+}
+
+li span {
+    display: block;
 }

@@ -38,7 +38,6 @@ export class GrupoComponent implements OnInit {
 
       this.newGrupo = new Grupo();
     }
-    console.log(this.grupos)
   }
 
   allFieldsValid() {
