@@ -1,0 +1,31 @@
+<h2>Seleção</h2>
+
+<fieldset>
+  <legend>Nova Seleção</legend>
+  <div>
+    <label>Nome:</label>
+    <input type="text" [(ngModel)]="newSelecao.name" />
+    <span *ngIf="showMessageError1" class="error">Campo obrigatório</span>
+  </div>
+  <div>
+    <label>Grupo:</label>
+    <select [(ngModel)]="newSelecao.grupo" >
+      <option *ngFor="let grupo of grupos" [ngValue]="grupo">
+        {{grupo.name}}
+      </option>
+    </select>
+    <span class="error" *ngIf="showMessageError1">Campo obrigatório</span>
+  </div>
+  
+  <input type="button" value="Salvar" (click)="saveSelecao()" />
+</fieldset>
+
+<ul>
+  <li *ngFor="let selecao of selecoes">
+    <span>{{ selecao.name }}</span>
+    <span>{{ selecao.grupo.name }}</span>
+    <input type="button" value="Editar" (click)="editSelecao(selecao)" />
+    <input type="button" value="Excluir" (click)="deleteSelecao(selecao)" />
+      <span></span>
+  </li>
+</ul>
